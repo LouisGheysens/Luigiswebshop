@@ -7,6 +7,9 @@ connectDB();
 
 const app = express();
 
+const router = express.Router();
+
+
 app.use(express.json());
 
 app.use('/api/products', productRoutes)

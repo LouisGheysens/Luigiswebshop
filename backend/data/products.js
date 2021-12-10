@@ -59,7 +59,7 @@ const products = [
     {
         name: "Hoofdmasker",
         imageUrl: "backend\assets\image00010.jpeg",
-        description: "Coronatijden baart ons allen veel zorge, met dit hoofdmasker bent u volledig" +
+        description: "Coronatijden baart ons allen veel zorgen, met dit hoofdmasker bent u volledig" +
         " covid-safe, laat covid jou niet foppen door dit geweldig hoofdmakser",
         price: 3,
         countInStock: 20

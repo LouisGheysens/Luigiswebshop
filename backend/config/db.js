@@ -1,4 +1,4 @@
-requirer('dotenv').config();
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 
@@ -8,8 +8,11 @@ const connectDb = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
+        console.log('Mongodb connection succeed');
     }catch(error){
         console.log("MongoDb connection failed");
+        console.log(error.message);
+        process.exit(1);
     }
 };
 
