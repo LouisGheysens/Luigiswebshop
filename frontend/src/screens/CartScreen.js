@@ -49,7 +49,7 @@ const CartScreen = () => {
             <p>€{getCartSubTotal().toFixed(2)}</p>
             </div>
             <div>
-                <button>Proceed to checkout</button>
+                <button className="checkoutBtn">Proceed to checkout</button>
             </div>
             </div>
         </div>
