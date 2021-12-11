@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { getProductDetails } from '../redux/actions/productAction';
 import { addToCart } from '../redux/actions/cartAction';
-import { load } from 'dotenv';
+
 
 const ProductScreen = ({match, history}) => {
 
