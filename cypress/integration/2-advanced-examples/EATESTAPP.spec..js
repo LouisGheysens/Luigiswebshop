@@ -10,6 +10,15 @@ describe('Cypress javascript testing', () => {
 it('Click button to place order', () =>{
     cy.get('.checkoutBtn').type('finished')
 })
+
+it('Click button to see productDetails', () =>{
+    cy.get('.info__button').tye('finishes');
+})
+
+it('Navigate to pages mobile-device mode', () =>{
+    cy.get('.hamburger__menu').type('finished');
+})
+
 });
 
 
