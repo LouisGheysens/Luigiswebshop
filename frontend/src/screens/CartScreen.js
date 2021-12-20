@@ -1,7 +1,6 @@
 import React from 'react';
 import './CartScreen.css'
 import CartItem from '../components/CartItem';
-import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import {addToCart, removeFromCart} from '../redux/actions/cartAction';
@@ -49,7 +48,7 @@ const CartScreen = () => {
             <p>€{getCartSubTotal().toFixed(2)}</p>
             </div>
             <div>
-                <button className="checkoutBtn">Proceed to checkout</button>
+                <button method="post" className="checkoutBtn">Proceed to checkout</button>
             </div>
             </div>
         </div>

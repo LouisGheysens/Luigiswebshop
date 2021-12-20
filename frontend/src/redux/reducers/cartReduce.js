@@ -1,4 +1,3 @@
-import xXssProtection from 'helmet/dist/middlewares/x-xss-protection';
 import * as actionTypes from '../constants/cartConstants';
 
 export const cartReducer = (state = { cartItems: [] }, action) =>{

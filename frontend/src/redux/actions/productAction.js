@@ -9,7 +9,7 @@ export const getProducts = () => async (dispatch) =>{
 
         dispatch({
             type: actionTypes.GET_PRODUCTS_SUCCES,
-            payload: data
+            payload: data,
         });
     }catch(error){
         dispatch({
@@ -30,7 +30,7 @@ export const getProductDetails = (id) => async (dispatch) =>{
 
         dispatch({
             type: actionTypes.GET_PRODUCT_DETAILS_SUCCES,
-            payload: data
+            payload: data,
         });
     }catch(error){
         dispatch({

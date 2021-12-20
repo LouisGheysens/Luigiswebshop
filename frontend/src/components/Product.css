@@ -51,6 +51,7 @@
 
 @media (max-width: 1232px){
     .product{
+        grid-template-columns: repeat(3, 1fr);
         width: 360px;
     }
 }
