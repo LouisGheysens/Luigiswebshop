@@ -2,7 +2,7 @@ import React from 'react';
 import './CartItem.css';
 import {Link} from 'react-router-dom';
 
-const CartItem = ({ item , qtyChangeHandler, removeFromHandler}) => {
+const CartItem = ({ item , qtyChangeHandler, removeHandler}) => {
     return (
         <div className="cartitem">
             <div className="cartitem__image">
@@ -24,7 +24,7 @@ const CartItem = ({ item , qtyChangeHandler, removeFromHandler}) => {
             ))}
             </select>
 
-            <button className="cartitem__deleteBtn" onClick={() => removeFromHandler(item.product)}>
+            <button className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
                 <i className="fas fa-trash"></i>
             </button>
         </div>

@@ -39,7 +39,10 @@ const CartScreen = () => {
                         Your cart is empty <Link to="/">Go back</Link>
                     </div>
                 ) : cartItems.map(item =>(
-                    <CartItem key={item.product} item={item} qtyChangeHandler={qtyChangeHandler} removeHandler={removeHandler}/>
+                    <CartItem 
+                    key={item.product} item={item} 
+                    qtyChangeHandler={qtyChangeHandler} r
+                    removeHandler={removeHandler}/>
                 ))}
             </div>
             <div className="cartscreen__right">
