@@ -4,6 +4,7 @@ import CartItem from '../components/CartItem';
 import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom';
 import {addToCart, removeFromCart} from '../redux/actions/cartAction';
+import {postOrder} from '../redux/actions/orderAction'
 
 const CartScreen = () => {
 
@@ -33,17 +34,14 @@ const CartScreen = () => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-
-        setIsPending(true);
-
-        fetch('http://localhost:3000/cart', {
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify()
-        }).then(() =>{
-            console.log('Nieuw order toegevoegd!');
-            setIsPending(false);
-        })
+        dispatch(
+            postOrder({
+                name: cart.name,
+                product: cart.product,
+                qty: cart.qty,
+                imageUrl: cart.imageUrl,
+            })
+        )
     }
 
 
@@ -68,8 +66,7 @@ const CartScreen = () => {
             <p>€{getCartSubTotal().toFixed(2)}</p>
             </div>
             <div>
-                <button method="post" className="checkoutBtn">Proceed to checkout
-                </button>
+                <button method="post" className="checkoutBtn">Proceed to checkout</button>
             </div>
             </div>
         </div>
