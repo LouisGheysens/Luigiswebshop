@@ -33,13 +33,12 @@ const CartScreen = () => {
     };
 
     const handleSubmit = (e) =>{
+        setIsPending(true);
         e.preventDefault();
+        console.log(cartItems);
         dispatch(
             postOrder({
-                name: cart.name,
-                product: cart.product,
-                qty: cart.qty,
-                imageUrl: cart.imageUrl,
+                products: cartItems,
             })
         )
     }
@@ -66,7 +65,7 @@ const CartScreen = () => {
             <p>€{getCartSubTotal().toFixed(2)}</p>
             </div>
             <div>
-                <button method="post" className="checkoutBtn">Proceed to checkout</button>
+                <button onClick={handleSubmit} method="post" className="checkoutBtn">Proceed to checkout</button>
             </div>
             </div>
         </div>

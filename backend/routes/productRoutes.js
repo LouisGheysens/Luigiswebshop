@@ -18,13 +18,7 @@ router.get('/:id', getProductById);
 //POST method
 router.post('/', (req, res, next) =>{
   const order = new Order({
-    _id: mongoose.Types.ObjectId(),
-    name: req.body.name,
-    price: req.body.price,
-    qty: req.body.qty,
-    description: req.body.description,
-    imageUrl: req.body.imageUrl,
-    totalCost: req.body.totalCost
+    products: req.body.products,
   });
   order.save().exec().then(result => {
     console.log(result);
