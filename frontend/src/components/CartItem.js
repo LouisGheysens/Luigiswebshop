@@ -2,6 +2,7 @@ import React from 'react';
 import './CartItem.css';
 import {Link} from 'react-router-dom';
 
+//Gebruik dit in uw createOrder in uw cartscreen
 const CartItem = ({ item , qtyChangeHandler, removeHandler}) => {
     return (
         <div className="cartitem">

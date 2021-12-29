@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Order = require('../models/order');
 
 const { 
     getAllProducts,
@@ -14,17 +15,27 @@ router.get('/', getAllProducts);
 //ROUTE GET api/products/:id
 router.get('/:id', getProductById);
 
-router.post("/", (req, res) => {
-    let myData = new Order(req.body);
-    myData.save()
-      .then(item => {
-        res.send("item saved to database");
-        res.redirect('/');
-      })
-      .catch(err => {
-        res.status(400).send("unable to save to database");
-      });
+//POST method
+router.post('/', (req, res, next) =>{
+  const order = new Order({
+    _id: mongoose.Types.ObjectId(),
+    name: req.body.name,
+    price: req.body.price,
+    qty: req.body.qty,
+    description: req.body.description,
+    imageUrl: req.body.imageUrl,
+    totalCost: req.body.totalCost
   });
+  order.save().exec().then(result => {
+    console.log(result);
+    res.status(201).json(result)
+  }).catch(err =>{
+    console.log(err);
+    res.status(500).json({
+      err: err
+    });
+  });
+})
 
 
 module.exports = router;

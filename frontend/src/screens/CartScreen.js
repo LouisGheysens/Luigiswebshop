@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CartScreen.css'
 import CartItem from '../components/CartItem';
 import {useDispatch, useSelector} from 'react-redux'
@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom';
 import {addToCart, removeFromCart} from '../redux/actions/cartAction';
 
 const CartScreen = () => {
+
+    const [isPending, setIsPending] = useState('false');
 
     const dispatch = useDispatch();
 
@@ -29,6 +31,21 @@ const CartScreen = () => {
         return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
     };
 
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        setIsPending(true);
+
+        fetch('http://localhost:3000/cart', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify()
+        }).then(() =>{
+            console.log('Nieuw order toegevoegd!');
+            setIsPending(false);
+        })
+    }
+
 
     return (
         <div className="cartscreen">
@@ -41,7 +58,7 @@ const CartScreen = () => {
                 ) : cartItems.map(item =>(
                     <CartItem 
                     key={item.product} item={item} 
-                    qtyChangeHandler={qtyChangeHandler} r
+                    v={qtyChangeHandler} r
                     removeHandler={removeHandler}/>
                 ))}
             </div>
@@ -51,7 +68,8 @@ const CartScreen = () => {
             <p>€{getCartSubTotal().toFixed(2)}</p>
             </div>
             <div>
-                <button method="post" className="checkoutBtn">Proceed to checkout</button>
+                <button method="post" className="checkoutBtn">Proceed to checkout
+                </button>
             </div>
             </div>
         </div>
