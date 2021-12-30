@@ -16,7 +16,7 @@ router.get('/', getAllProducts);
 router.get('/:id', getProductById);
 
 //POST method
-router.post('/', (req, res, next) =>{
+router.post('/api/orders', (req, res, next) =>{
   const order = new Order({
     products: req.body.products,
   });
