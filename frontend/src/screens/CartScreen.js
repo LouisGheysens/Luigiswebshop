@@ -41,6 +41,7 @@ const CartScreen = () => {
                 products: cartItems,
             })
         )
+            alert('Bestelling werd geplaatst!')
     }
 
 
