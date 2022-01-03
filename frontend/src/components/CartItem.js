@@ -9,12 +9,10 @@ const CartItem = ({ item ,removeHandler}) => {
     
     const dispatch = useDispatch();
 
-    
     const qtyChangeHandler = (id, qty) => {
         dispatch(addToCart(id, qty))
     }
 
-    
     return (
         <div className="cartitem">
             <div className="cartitem__image">
