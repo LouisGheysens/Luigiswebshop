@@ -1,9 +1,20 @@
 import React from 'react';
 import './CartItem.css';
 import {Link} from 'react-router-dom';
+import {addToCart} from '../redux/actions/cartAction';
+import {useDispatch} from 'react-redux'
 
 //Gebruik dit in uw createOrder in uw cartscreen
-const CartItem = ({ item , qtyChangeHandler, removeHandler}) => {
+const CartItem = ({ item ,removeHandler}) => {
+    
+    const dispatch = useDispatch();
+
+    
+    const qtyChangeHandler = (id, qty) => {
+        dispatch(addToCart(id, qty))
+    }
+
+    
     return (
         <div className="cartitem">
             <div className="cartitem__image">
