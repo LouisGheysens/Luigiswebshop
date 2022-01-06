@@ -7,6 +7,7 @@ import CartScreen from './screens/CartScreen';
 import Navbar from './components/Navbar'
 import Backdrop from './components/Backdrop'
 import SideDrawer from './components/SideDrawer';
+import FormScreen from './screens/FormScreen';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route exact path="/" element={<HomeScreen />} />
         <Route exact path="/product/:id" element={<ProductScreen />} />
         <Route exact path="/cart" element={<CartScreen />} />
+        <Route exact path="/form" element={<FormScreen />}/>
       </Routes>
     </main>
     </Router>

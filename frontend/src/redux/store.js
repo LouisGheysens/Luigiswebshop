@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { cartReducer } from './reducers/cartReduce'
 import { getProductDetailsReducer, getProductsReducer } from './reducers/productReducer';
 import throttle from 'lodash/throttle';
-import { template } from 'lodash';
+import { initial, template } from 'lodash';
 
 const reducer = combineReducers({
     cart: cartReducer,
@@ -45,7 +45,6 @@ const INITIAL_STATE = {
 
 const store = createStore(
     reducer,
-    INITIAL_STATE,
     composeWithDevTools(applyMiddleware(...middleware))
 );
 

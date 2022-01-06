@@ -11,6 +11,10 @@ describe('Cypress javascript testing', () => {
         cy.visit('http://localhost:3000/product');
     })
 
+    it('Navigates to FormScreen', () =>{
+        cy.visit('http://localhost:3000/form');
+    })
+
 it('Click button to place order', () =>{
     cy.get('.checkoutBtn').type('finished')
 })
