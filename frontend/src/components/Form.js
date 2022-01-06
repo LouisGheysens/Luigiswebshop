@@ -12,12 +12,6 @@ const Form = () => {
     ).then(res =>{
         console.log(res);
         alert('Bericht werd succesvol verzonden!');
-        setValues({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-        });
     }).catch(err => console.log(err))
 }
     
@@ -44,7 +38,7 @@ const Form = () => {
                     <div className="col-8 form-group mx-auto">
                     <label>name</label> 
                         <input type="text" className="form-control" placeholder="Naam" name="name"
-                        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                        pattern="^[a-zA-Z ]*$"
                             required
                         />
                     </div>
@@ -57,14 +51,14 @@ const Form = () => {
                         <div className="col-8 form-group pt-2 mx-auto">
                         <label>onderwerp</label> 
                             <input handleChange={handleChange} type="text" className="form-control" placeholder="Onderwerp" name="subject"
-                            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                            pattern="^[a-zA-Z ]*$"
                                 required
                             />
                         </div>
                         <div className="col-8 form-group pt-2 mx-auto">
                         <label>bericht</label> 
                             <textarea handleChange={handleChange} className="form-control" id="" cols="30" rows="8" placeholder="Uw bericht" name="message"
-                            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+                            pattern="^[a-zA-Z ]*$"
                             required></textarea>
                         </div>
                         <div className="col-8 pt-3 mx-auto">
