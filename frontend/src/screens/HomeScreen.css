@@ -17,13 +17,13 @@
 
 @media (max-width: 1232px){
     .homescreen__products{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, auto);
     }
 }
 
 @media (max-width: 950){
     .homescreen__products{
-        grid-template-columns: repeat(2 1fr);
+        grid-template-columns: repeat(2 auto);
     }
 }
 

@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import {addToCart} from '../redux/actions/cartAction';
 import {useDispatch} from 'react-redux'
 
-//Gebruik dit in uw createOrder in uw cartscreen
 const CartItem = ({ item ,removeHandler}) => {
     
     const dispatch = useDispatch();
