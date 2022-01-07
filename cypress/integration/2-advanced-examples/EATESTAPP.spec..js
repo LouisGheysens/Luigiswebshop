@@ -14,10 +14,41 @@ describe('Cypress javascript testing', () => {
     it('Navigates to FormScreen', () =>{
         cy.visit('http://localhost:3000/form');
     })
-
-it('Click button to place order', () =>{
-    cy.get('.checkoutBtn').type('finished')
-})
 });
+
+
+describe('Cypress form testing', () =>{
+    it('navigate to form page', () =>{
+        cy.visit('http://localhost:3000/form');
+    })
+
+    it('Enter name', () =>{
+        cy.get('input[name="name"]').should('be.visible').type('Louis Gheysens')
+    })
+
+    it('Enter email', () =>{
+        cy.get('input[name="email"]').should('be.visible').type('Louis.gheysens98@gmail.com')
+    })
+
+    it('Enter subject', () =>{
+        cy.get('input[name="subject"]').should('be.visible').type('test subject')
+    })
+
+    it('Enter message', () =>{
+        cy.get('textarea[name="message"]').should('be.visible').type('test subject')
+    })
+
+    it('Click button to activate emailjs', () =>{
+        cy.get('.btn-btn-info').should('be.visible').type('button clicking')
+})
+
+
+
+
+
+
+
+
+})
 
 
