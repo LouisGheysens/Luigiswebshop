@@ -17,15 +17,8 @@ router.get('/:id', getProductById);
 
 //POST method
 router.post('/api/orders', (req, res, next) =>{
-  const order = new Order({
-    name: order.name,
-    price: order.price,
-    cart: order.cart,
-    qty: order.qty,
-    description: order.description,
-    imageUrl: order.imageUrl
-  });
-  order.save().exec().then(result => {
+    let data = new Order(req.body);
+    order.save().exec().then(result => {
     console.log(result);
     res.status(201).json(result)
   }).catch(err =>{

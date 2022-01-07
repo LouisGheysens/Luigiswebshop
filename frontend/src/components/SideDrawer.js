@@ -13,8 +13,8 @@ const SideDrawer = ({show, click}) => {
     const { cartItems } = cart;
 
     const getCarCount = () =>{
-        return cartItems.reduce((qty, item) => qty + Number(item.qty), 0);
-    }
+        return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+    };
 
 
 

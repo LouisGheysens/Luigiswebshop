@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CartScreen.css'
 import CartItem from '../components/CartItem';
 import {useDispatch, useSelector} from 'react-redux'
@@ -15,6 +15,9 @@ const CartScreen = () => {
     const cart = useSelector(state => state.cart);
 
     const { cartItems } = cart;
+
+    useEffect(() => {}, []);
+
 
     const qtyChangeHandler = (id, qty) => {
         dispatch(addToCart(id, qty))
@@ -50,16 +53,22 @@ const CartScreen = () => {
         <div className="cartscreen">
             <div className="cartscreen__left">
                 <h2>Shopping cart</h2>
+
+
                 {cartItems.length === 0 ? (
                     <div>
                         Your cart is empty <Link to="/">Go back</Link>
                     </div>
-                ) : cartItems.map(item =>(
+                ) : ( 
+                    cartItems.map((item)=>(
                     <CartItem 
-                    key={item.product} item={item} 
-                    v={qtyChangeHandler} r
-                    removeHandler={removeHandler}/>
-                ))}
+                    key={item.product} 
+                    item={item} 
+                    v={qtyChangeHandler}
+                    removeHandler={removeHandler}
+                    />
+                    ))
+                    )}
             </div>
             <div className="cartscreen__right">
             <div className="cartscreen__info">
