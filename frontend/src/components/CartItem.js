@@ -34,7 +34,7 @@ const CartItem = ({ item ,removeHandler}) => {
             </select>
 
             <button className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
-                <i className="fas fa-trash"></i>
+                <i className="fa fa-trash"></i>
             </button>
         </div>
     )
