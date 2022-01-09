@@ -23,7 +23,7 @@ const SideDrawer = ({show, click}) => {
         <ul className="sidedrawer__links" onClick={click}>
         <li>
         <Link to="/cart">
-            <i className="fas fa-shopping-cart"></i>
+        <i class="fa fa-cart-plus" aria-hidden="true"></i>
             <span>
                 Cart <span className="sidedrawer__cartbadge">{getCarCount()}</span>
             </span>

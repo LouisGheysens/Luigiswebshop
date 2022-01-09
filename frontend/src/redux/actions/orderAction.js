@@ -13,7 +13,7 @@ export const postOrder = (Order) => async(dispatch, getState) =>{
             },
         }
 
-        const { data } = await axios.post(`/api/products/api/orders`, Order, config)
+        const { data } = await axios.post(`/api/orders`, Order, config)
 
         dispatch({
             type: actionTypes.ORDER_POST_SUCCES,
